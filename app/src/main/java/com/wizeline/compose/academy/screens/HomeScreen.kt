@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.wizeline.compose.academy.R
-import com.wizeline.compose.academy.components.PlaceItemCard
+import com.wizeline.compose.academy.components.*
 import com.wizeline.compose.academy.ui.theme.ComposeAcademyTheme
 import com.wizeline.compose.academy.ui.theme.PrimaryGravyVariant
 import com.wizeline.compose.academy.ui.theme.PrimaryGray
@@ -27,109 +27,73 @@ import com.wizeline.compose.academy.ui.theme.PrimaryGray
 
 @Composable
 fun HomeScreen() {
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier.fillMaxSize().padding(20.dp)) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = stringResource(id = R.string.label_explore),
             style= MaterialTheme.typography.h4.copy(
-                color = PrimaryGray
+                color = PrimaryGray,
+                fontWeight = FontWeight.Bold
             ))
 
             Icon(imageVector = Icons.Default.Notifications, contentDescription = null,
             tint = PrimaryGravyVariant)
         }
+
         Text(text = stringResource(id = R.string.label_explore_description),
             style= MaterialTheme.typography.body1.copy(
                 color = PrimaryGray
             ))
 
+        CustomHeightSpacer()
+
         SearchBar()
 
-        HorizontalTabList()
+        CustomHeightSpacer()
 
+        HorizontalTabList(list = listOf("Hotels", "Things to do", "Events"))
 
+        CustomHeightSpacer()
 
         LazyRow(){
-            items(5){
+            items(3){
                 PlaceItemCard()
             }
         }
 
-    }
-}
+        CustomHeightSpacer()
 
-@Composable
-private fun HorizontalTabList() {
+        Row (modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 10.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically){
 
-    LazyRow(){
-        items(5){
-            HorizontalItemTab(position = it)
+            Text(text = "Categories",
+                style = MaterialTheme.typography.h6.copy(
+                    fontWeight = FontWeight.Bold
+                ))
+
+            Text(text = "See more",
+                style = MaterialTheme.typography.body2.copy(
+                    color = MaterialTheme.colors.primary
+                ))
         }
-    }
 
+        CustomHeightSpacer()
 
-
-}
-
-@Composable
-private fun HorizontalItemTab(
-    selectedIndex: Int = 0,
-    position: Int = 0
-) {
-    
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-
-    ) {
-        Text(
-            text = "Hotels",
-            style = MaterialTheme.typography.body2.copy(
-                fontWeight = FontWeight.Bold,
-                color = if(selectedIndex==position){
-                    MaterialTheme.colors.primary
-                }else{
-                    PrimaryGravyVariant
-                }
-            )
-        )
-
-        if(selectedIndex==position){
-            Box(
-                modifier = Modifier
-                    .size(5.dp)
-                    .clip(CircleShape)
-                    .background(color = MaterialTheme.colors.primary)
-            )
-        }else{
-            Box() {
-                
+        LazyRow{
+            items(4){
+                CategoryItemCard()
             }
         }
-        
     }
 }
 
-@Composable
-private fun SearchBar() {
-    TextField(
-        value = "", onValueChange = {},
-        placeholder = { Text(text = "Search") },
-        leadingIcon = {
-            Icon(Icons.Default.Search, contentDescription = "search")
-        },
-        shape = RoundedCornerShape(20.dp),
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            focusedBorderColor = Color.Transparent,
-            errorBorderColor = Color.Transparent,
-            unfocusedBorderColor = Color.Transparent,
-            backgroundColor = Color.White
-        ),
-        maxLines = 1,
-        modifier = Modifier.fillMaxWidth()
-    )
-}
+
 
 @Preview
 @Composable
