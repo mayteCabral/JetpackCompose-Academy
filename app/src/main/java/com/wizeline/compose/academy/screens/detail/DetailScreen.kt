@@ -156,23 +156,6 @@ private fun DetailCardContent(modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun PlaceImageGalley(){
-    LazyRow{
-        items(5){
-            Image(
-                painter = painterResource(id = R.drawable.hotel_gallery),
-                contentDescription = "place_item.gallery",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(200.dp)
-                    .padding(10.dp)
-                    .clip(MaterialTheme.shapes.medium)
-            )
-        }
-    }
-}
-
 @Preview
 @Composable
 fun PreviewDetailScreen() {
