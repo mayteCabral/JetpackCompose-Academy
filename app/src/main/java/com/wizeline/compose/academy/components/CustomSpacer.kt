@@ -5,19 +5,19 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import com.wizeline.compose.academy.ui.theme.*
 
 @Composable
 fun CustomHeightSpacer(
     spacerHeight: SpacerWidthNHeight = SpacerWidthNHeight.MEDIUM
 ){
     val height = when(spacerHeight){
-        SpacerWidthNHeight.EXTRA_SMALL -> 5.dp
-        SpacerWidthNHeight.SMALL -> 10.dp
-        SpacerWidthNHeight.MEDIUM -> 15.dp
-        SpacerWidthNHeight.LARGE -> 20.dp
-        SpacerWidthNHeight.EXTRA_LARGE -> 25.dp
-        else -> 10.dp
+        SpacerWidthNHeight.EXTRA_SMALL -> dimen_5dp
+        SpacerWidthNHeight.SMALL -> dimen_10dp
+        SpacerWidthNHeight.MEDIUM -> dimen_15dp
+        SpacerWidthNHeight.LARGE -> dimen_20dp
+        SpacerWidthNHeight.EXTRA_LARGE -> dimen_25dp
+        else -> dimen_10dp
     }
 
     Spacer(modifier = Modifier.height(height))
@@ -28,12 +28,12 @@ fun CustomWidthSpacer(
     spacerWidth: SpacerWidthNHeight = SpacerWidthNHeight.MEDIUM
 ){
     val width = when(spacerWidth){
-        SpacerWidthNHeight.EXTRA_SMALL -> 5.dp
-        SpacerWidthNHeight.SMALL -> 10.dp
-        SpacerWidthNHeight.MEDIUM -> 15.dp
-        SpacerWidthNHeight.LARGE -> 20.dp
-        SpacerWidthNHeight.EXTRA_LARGE -> 25.dp
-        else -> 10.dp
+        SpacerWidthNHeight.EXTRA_SMALL -> dimen_5dp
+        SpacerWidthNHeight.SMALL -> dimen_10dp
+        SpacerWidthNHeight.MEDIUM -> dimen_15dp
+        SpacerWidthNHeight.LARGE -> dimen_20dp
+        SpacerWidthNHeight.EXTRA_LARGE -> dimen_25dp
+        else -> dimen_10dp
     }
 
     Spacer(modifier = Modifier.width(width))

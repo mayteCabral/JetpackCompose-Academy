@@ -13,10 +13,12 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.wizeline.compose.academy.R
 import com.wizeline.compose.academy.components.CustomWidthSpacer
 import com.wizeline.compose.academy.ui.theme.ComposeAcademyTheme
+import com.wizeline.compose.academy.ui.theme.dimen_100dp
+import com.wizeline.compose.academy.ui.theme.dimen_10dp
+import com.wizeline.compose.academy.ui.theme.dimen_5dp
 
 @Composable
 fun ImageGalleryScreen(){
@@ -31,13 +33,13 @@ fun ImageGalleryScreen(){
             modifier = Modifier.fillMaxSize()
         )
         
-        Box(modifier = Modifier.padding(10.dp)) {
+        Box(modifier = Modifier.padding(dimen_10dp)) {
             Column(
                 modifier = Modifier
                     .background(
                         color = Color.White
                     )
-                    .padding(5.dp)
+                    .padding(dimen_5dp)
             ) {
                 ImageGalleryItem()
 
@@ -64,7 +66,7 @@ private fun ImageGalleryItem(
         painter = image,
         contentDescription = null,
         contentScale = ContentScale.Crop,
-        modifier = Modifier.size(100.dp)
+        modifier = Modifier.size(dimen_100dp)
 
     )
 }

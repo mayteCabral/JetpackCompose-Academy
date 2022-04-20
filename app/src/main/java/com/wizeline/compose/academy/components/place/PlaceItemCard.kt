@@ -24,31 +24,29 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.wizeline.compose.academy.R
-import com.wizeline.compose.academy.ui.theme.ComposeAcademyTheme
-import com.wizeline.compose.academy.ui.theme.PrimaryGravyVariant
-import com.wizeline.compose.academy.ui.theme.PrimaryOrange
+import com.wizeline.compose.academy.ui.theme.*
 
 @Composable
 fun PlaceItemCard(){
-    Card(modifier = Modifier.padding(5.dp),
+    Card(modifier = Modifier.padding(dimen_5dp),
     shape = MaterialTheme.shapes.medium,
-    elevation = 5.dp) {
+    elevation = dimen_5dp) {
         Column {
             Box(contentAlignment = Alignment.TopEnd) {
                 Image(painter = painterResource(id = R.drawable.hotel_image_1),
                     contentDescription = "place",
                     contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .width(250.dp)
-                    .height(200.dp)
-                    .padding(5.dp)
-                    .clip(RoundedCornerShape(20.dp)))
+                    .width(dimen_250dp)
+                    .height(dimen_200dp)
+                    .padding(dimen_5dp)
+                    .clip(RoundedCornerShape(dimen_20dp)))
 
                 CircleIconButton(Icons.Default.FavoriteBorder)
             }
 
 
-            Column(modifier = Modifier.padding(horizontal = 15.dp, vertical= 8.dp)) {
+            Column(modifier = Modifier.padding(horizontal = dimen_15dp, vertical= dimen_10dp)) {
 
                 CustomHeightSpacer(
                     spacerHeight = SpacerWidthNHeight.EXTRA_SMALL
@@ -121,7 +119,7 @@ fun PlaceItemPrice() {
             style = SpanStyle(
                 color = MaterialTheme.colors.primary,
                 fontWeight = FontWeight.Bold,
-                fontSize = 16.sp
+                fontSize = dimen_16sp
             )
         ) {
             append("$1,200")

@@ -22,8 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.wizeline.compose.academy.R
 import com.wizeline.compose.academy.components.*
-import com.wizeline.compose.academy.ui.theme.ComposeAcademyTheme
-import com.wizeline.compose.academy.ui.theme.PrimaryGravyVariant
+import com.wizeline.compose.academy.ui.theme.*
 
 @Composable
 fun DetailScreen() {
@@ -76,14 +75,14 @@ fun DetailScreen() {
 private fun DetailCardContent(modifier: Modifier = Modifier) {
     Card(
         shape = RoundedCornerShape(
-            topEnd = 30.dp,
-            topStart = 30.dp
+            topEnd = dimen_30dp,
+            topStart = dimen_30dp
         ),
-        elevation = 0.dp,
+        elevation = dimen_0dp,
         modifier = modifier
     ) {
         LazyColumn(
-            modifier = Modifier.padding(10.dp)
+            modifier = Modifier.padding(dimen_10dp)
         ) {
             item {
                 CustomHeightSpacer()

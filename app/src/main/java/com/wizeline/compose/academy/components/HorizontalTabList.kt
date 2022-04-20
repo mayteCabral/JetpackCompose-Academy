@@ -17,6 +17,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.wizeline.compose.academy.ui.theme.PrimaryGravyVariant
+import com.wizeline.compose.academy.ui.theme.dimen_10dp
+import com.wizeline.compose.academy.ui.theme.dimen_20dp
+import com.wizeline.compose.academy.ui.theme.dimen_5dp
 
 @Composable
 fun HorizontalTabList(list: List<String>) {
@@ -52,21 +55,17 @@ private fun HorizontalItemTab(
                     PrimaryGravyVariant
                 }
             ),
-            modifier = Modifier.padding(horizontal = 20.dp,
-            vertical = 10.dp)
+            modifier = Modifier.padding(horizontal = dimen_20dp,
+            vertical = dimen_10dp)
         )
 
         if(selectedIndex==position){
             Box(
                 modifier = Modifier
-                    .size(5.dp)
+                    .size(dimen_5dp)
                     .clip(CircleShape)
                     .background(color = MaterialTheme.colors.primary)
             )
-        }else{
-            Box() {
-
-            }
         }
 
     }

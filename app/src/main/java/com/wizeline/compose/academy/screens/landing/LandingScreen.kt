@@ -15,11 +15,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.wizeline.compose.academy.R
 import com.wizeline.compose.academy.components.CustomButton
 import com.wizeline.compose.academy.components.CustomHeightSpacer
 import com.wizeline.compose.academy.ui.theme.ComposeAcademyTheme
+import com.wizeline.compose.academy.ui.theme.dimen_20dp
+import com.wizeline.compose.academy.utils.defaultScreen
 
 @Composable
 fun LandingScreen() {
@@ -34,7 +35,7 @@ fun LandingScreen() {
         )
 
         Column(
-            modifier = Modifier.fillMaxSize().padding(20.dp),
+            modifier = Modifier.defaultScreen(),
             verticalArrangement = Arrangement.Bottom
         ) {
 

@@ -12,6 +12,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.wizeline.compose.academy.R
+import com.wizeline.compose.academy.ui.theme.dimen_10dp
+import com.wizeline.compose.academy.ui.theme.dimen_200dp
 
 @Composable
 fun PlaceImageGalley(){
@@ -22,8 +24,8 @@ fun PlaceImageGalley(){
                 contentDescription = "place_item.gallery",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(200.dp)
-                    .padding(10.dp)
+                    .size(dimen_200dp)
+                    .padding(dimen_10dp)
                     .clip(MaterialTheme.shapes.medium)
             )
         }

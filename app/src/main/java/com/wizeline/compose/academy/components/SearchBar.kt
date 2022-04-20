@@ -8,10 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.wizeline.compose.academy.ui.theme.dimen_15dp
 
 @Composable
 fun SearchBar() {
-    Card(elevation = 15.dp,
+    Card(elevation = dimen_15dp,
         shape = MaterialTheme.shapes.medium) {
         TextField(
             value = "",

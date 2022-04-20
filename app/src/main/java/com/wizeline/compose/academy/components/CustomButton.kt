@@ -11,6 +11,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.wizeline.compose.academy.R
+import com.wizeline.compose.academy.ui.theme.dimen_5dp
 
 @Composable
 fun CustomButton(text: String, modifier: Modifier = Modifier, onActionClick: () -> Unit){
@@ -18,7 +19,7 @@ fun CustomButton(text: String, modifier: Modifier = Modifier, onActionClick: () 
     shape = MaterialTheme.shapes.medium,
     modifier = modifier) {
         Text(text = text,
-        modifier = Modifier.padding(5.dp),
+        modifier = Modifier.padding(dimen_5dp),
         fontWeight = FontWeight.Bold)
     }
 }

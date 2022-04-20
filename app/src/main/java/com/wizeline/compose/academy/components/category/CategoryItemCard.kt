@@ -18,20 +18,24 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.wizeline.compose.academy.R
+import com.wizeline.compose.academy.ui.theme.dimen_0dp
+import com.wizeline.compose.academy.ui.theme.dimen_10dp
+import com.wizeline.compose.academy.ui.theme.dimen_50dp
+import com.wizeline.compose.academy.ui.theme.dimen_5dp
 
 @Composable
 fun CategoryItemCard(){
     Card(shape = MaterialTheme.shapes.small,
     modifier = Modifier
         .background(color = Color.White)
-        .padding(5.dp),
-    elevation = 0.dp) {
+        .padding(dimen_5dp),
+    elevation = dimen_0dp) {
 
         Row(verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.padding(10.dp)) {
+        modifier = Modifier.padding(dimen_10dp)) {
             Image(painter = painterResource(id = R.drawable.mountain), contentDescription = "place_image",
             modifier = Modifier
-                .size(50.dp)
+                .size(dimen_50dp)
                 .clip(CircleShape),
             contentScale = ContentScale.Crop)
             CustomWidthSpacer(SpacerWidthNHeight.EXTRA_SMALL)
